@@ -1,2 +1,2 @@
 # checkout
-Teste Morê - React Native PL
+Teste Morê Dev - React Native PL
