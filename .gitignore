@@ -1,0 +1,8 @@
+build/Release
+node_modules/
+ios/Pods
+ios/Podfile.lock
+android/build/
+android/app/build/\*
+android/app/build/
+android/.gradle/
