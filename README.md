@@ -1,2 +1,2 @@
-# checkout
-Teste Morê Dev - React Native PL
+ # CheckoutApp
+Fluxo de checkout - React Native
