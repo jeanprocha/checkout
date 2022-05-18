@@ -9,12 +9,12 @@ export const Container = styled.SafeAreaView`
 
 export const Title = styled.Text`
     font-size: 18px;
-    color: #000;
+    color: ${props => props.theme.textColor};
     font-family: "Work Sans";
     font-weight: 700;
 `
 
 export const CartNumber = styled.Text`
-    color: #9a8bff;
+    color: ${props => props.theme.badgeText};
     font-size: 10px;
 `

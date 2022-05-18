@@ -21,7 +21,7 @@ export const Title = styled.Text`
     font-family: "Work Sans";
     font-weight: 700;
     text-transform: uppercase;
-    color: #6f6f6f;
+    color: ${props => props.theme.textColor2};
     margin-bottom: 4px;
 `
 

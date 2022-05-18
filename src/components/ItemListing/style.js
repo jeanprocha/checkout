@@ -18,14 +18,14 @@ export const Tag = styled.Text`
     font-weight: 700;
     font-size: 8px;
     line-height: 9.38px;
-    color: #8775fe;
+    color: ${props => props.theme.textColor4};
 `
 
 export const Title = styled.Text`
     font-family: "Work Sans";
     font-size: 14px;
     font-weight: 700;
-    color: #000;
+    color: ${props => props.theme.textColor};
     line-height: 16.42px;
 `
 
@@ -40,7 +40,7 @@ export const Price = styled.Text`
     font-size: 20px;
     font-weight: 700;
     line-height: 28.66px;
-    color: #8775fe;
+    color: ${props => props.theme.textColor4};
 `
 
 export const TouchIcon = styled.TouchableOpacity`

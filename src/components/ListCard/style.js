@@ -10,7 +10,7 @@ export const Title = styled.Text`
     font-size: 24px;
     font-weight: 600;
     line-height: 28px;
-    color: #000;
+    color: ${props => props.theme.textColor};
     margin-bottom: 45px;
 `
 

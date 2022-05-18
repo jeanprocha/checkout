@@ -15,14 +15,14 @@ export const Tag = styled.Text`
     font-weight: 700;
     font-size: 8px;
     line-height: 9.38px;
-    color: #8775fe;
+    color: ${props => props.theme.textColor4};
 `
 
 export const Title = styled.Text`
     font-family: "Work Sans";
     font-size: 14px;
     font-weight: 700;
-    color: #000;
+    color: ${props => props.theme.textColor};
     line-height: 16.42px;
 `
 
@@ -30,7 +30,7 @@ export const Description = styled.Text`
     font-family: "Work Sans";
     font-size: 10px;
     font-weight: 500;
-    color: #85868a;
+    color: ${props => props.theme.textColor3};
     line-height: 11.73px;
 `
 
@@ -45,5 +45,5 @@ export const Price = styled.Text`
     font-size: 20px;
     font-weight: 700;
     line-height: 28.66px;
-    color: #8775fe;
+    color: ${props => props.theme.textColor4};
 `

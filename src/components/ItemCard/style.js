@@ -7,7 +7,7 @@ export const ContainerModal = styled.TouchableOpacity`
 `
 
 export const CardModal = styled.View`
-    background-color: #fff;
+    background-color: ${props => props.theme.backgroundPage5};
     border-radius: 10px;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@ export const TitleModal = styled.Text`
     font-family: "Work Sans";
     font-weight: 700;
     font-size: 14px;
-    color: #696969;
+    color: ${props => props.theme.textColor6};
 `
 
 export const SubTitleModal = styled.Text`
@@ -28,7 +28,7 @@ export const SubTitleModal = styled.Text`
     font-family: "Work Sans";
     font-weight: 600;
     font-size: 10px;
-    color: #b5b5b5;
+    color: ${props => props.theme.textColor6};
     width: 76%;
     text-align: center;
 `
@@ -37,7 +37,7 @@ export const TextPro = styled.Text`
     font-family: "Work Sans";
     font-weight: 700;
     font-size: 10px;
-    color: #5a9acf;
+    color: ${props => props.theme.textColor8};
     padding-top: 14px;
     padding-bottom: 14px;
 `
@@ -46,21 +46,21 @@ export const TextCanc = styled.Text`
     font-family: "Work Sans";
     font-weight: 700;
     font-size: 10px;
-    color: #fd746a;
+    color: ${props => props.theme.textColor9};
     padding-top: 14px;
     padding-bottom: 14px;
 `
 
 export const Line = styled.TouchableOpacity`
     border-top-width: 1px;
-    border-color: #e7e7e7;
+    border-color: ${props => props.theme.borderColor};
     width: 100%;
     align-items: center;
 `
 
 export const Border = styled.TouchableOpacity`
     border-width: 1px;
-    border-color: #ccc;
+    border-color: ${props => props.theme.borderColor3};
     height: 34px;
     width: 43px;
     border-top-left-radius: 40px;
@@ -71,7 +71,7 @@ export const Border = styled.TouchableOpacity`
 
 export const Border2 = styled.TouchableOpacity`
     border-width: 1px;
-    border-color: #ccc;
+    border-color: ${props => props.theme.borderColor3};
     height: 34px;
     width: 43px;
     border-top-right-radius: 40px;
@@ -84,7 +84,7 @@ export const Container = styled.View`
     height: 72px;
     width: 100%;
     align-self: center;
-    background-color: #ece9ff;
+    background-color: ${props => props.theme.backgroundPage3};
     border-radius: 12px;
     margin-bottom: 16px;
     flex-direction: row;
@@ -97,7 +97,7 @@ export const Image = styled.Image`
     height: 50px;
     width: 38px;
     border-radius: 10px;
-    background-color: #E5E5E5;
+    background-color: ${props => props.theme.backgroundPage7};
 `
 
 export const Info = styled.View`
@@ -117,5 +117,5 @@ export const Price = styled.Text`
     font-size: 10px;
     font-weight: 700;
     line-height: 14.33px;
-    color: #8775fe;
+    color: ${props => props.theme.textColor4};
 `

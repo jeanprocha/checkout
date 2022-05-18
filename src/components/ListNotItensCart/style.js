@@ -11,14 +11,14 @@ export const Title = styled.Text`
     font-size: 24px;
     font-weight: 600;
     line-height: 28px;
-    color: #000;
+    color: ${props => props.theme.textColor};
     margin-bottom: 45px;
 `
 
 export const Button = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
-    background-color: #8775fe;
+    background-color: ${props => props.theme.backgroundPage2};
     border-radius: 37px;
     margin-top: 14px;
     width: 86%;
@@ -30,13 +30,13 @@ export const TextButton = styled.Text`
     font-family: "Work Sans";
     font-size: 14px;
     font-weight: 700;
-    color: #fff;
+    color: ${props => props.theme.textColor11};
 `
 
 export const Text = styled.Text`
     font-family: "Work Sans";
     font-size: 14px;
-    color: #9a9999;
+    color: ${props => props.theme.textColor10};
     text-align: center;
     font-weight: 700
 `

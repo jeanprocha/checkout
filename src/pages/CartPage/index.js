@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import HeaderCardPage from '../../components/HeaderCardPage'
 import ListCard from '../../components/ListCard'
 import ListNotItensCart from '../../components/ListNotItensCart'
-import { Line, Text, Button, TextButton } from './style'
+import { Container, Line, Text, Button, TextButton } from './style'
 
 export default CardPage = () => {
     const appReducer = useSelector(state => state.appReducer)
@@ -24,7 +24,7 @@ export default CardPage = () => {
     }
 
     return (
-        <View style={{ backgroundColor: "#F8F8F8", flex: 1, paddingTop: Platform.OS == 'android' && 10 }}>
+        <Container style={{ paddingTop: Platform.OS == 'android' && 10 }}>
             <HeaderCardPage />
             {!appReducer.cart.length ?
                 <ListNotItensCart />
@@ -41,6 +41,6 @@ export default CardPage = () => {
                     </Button>
                 </View>
             }
-        </View>
+        </Container>
     )
 }

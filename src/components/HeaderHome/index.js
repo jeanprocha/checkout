@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 import SVG_BAG from '../../../assets/svg/BAG_1.svg'
 import { Container, Title, CartNumber } from './style'
 
-export default HeaderHome = () => {
+export default HeaderHome = (props) => {
     const navigation = useNavigation()
     const appReducer = useSelector(state => state.appReducer)
 

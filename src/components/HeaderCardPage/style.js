@@ -12,7 +12,8 @@ export const Title = styled.Text`
     font-size: 12px;
     font-weight: 700;
     line-height: 14px;
-    color: #85868a;
+    color: ${props => props.theme.textColor3};
+
 `
 
 export const TouchIcon = styled.TouchableOpacity`

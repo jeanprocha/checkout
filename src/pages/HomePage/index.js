@@ -13,7 +13,7 @@ import Listing from '../../components/Listing'
 import { Loading, Container, Button, TextButton, ContainerButton } from './style'
 
 
-export default HomePage = () => {
+export default HomePage = ( props ) => {
     const appReducer = useSelector(states => states.appReducer)
     const dispatch = useDispatch()
     const navigation = useNavigation()
@@ -58,7 +58,7 @@ export default HomePage = () => {
 
     return (
         <>
-            <StatusBar barStyle='dark-content' />
+            <StatusBar barStyle='default' />
             {!appReducer.loading ?
                 <Loading>
                     <ActivityIndicator color={"#000"} size={'large'} />

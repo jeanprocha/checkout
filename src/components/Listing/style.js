@@ -6,7 +6,7 @@ export const Container = styled.View`
     padding-bottom: 25.5px;
     margin-top: 27px;
     border-bottom-width: 1px;
-    border-color: #ebebed;
+    border-color: ${props => props.theme.borderColor};
     min-height: 300px;
 `
 
@@ -14,7 +14,7 @@ export const Title = styled.Text`
     font-family: "Work Sans";
     font-size: 24px;
     font-weight: 600;
-    color: #000;
+    color: ${props => props.theme.textColor};
     margin-bottom: 20px;;
 `
 
