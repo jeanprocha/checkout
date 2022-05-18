@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { StatusBar, ActivityIndicator } from 'react-native'
+import { StatusBar, ActivityIndicator, Platform } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -65,6 +65,7 @@ export default HomePage = () => {
                 </Loading>
                 :
                 <Container
+                    style={{ paddingTop: Platform.OS == 'android' && 10 }}
                     bounces={false}
                     showsHorizontalScrollIndicator={false}
                     showsVerticalScrollIndicator={false}

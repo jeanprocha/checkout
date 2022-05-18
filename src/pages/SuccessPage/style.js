@@ -3,6 +3,8 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
     flex: 1;
     background-color: #8775FE;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const Title = styled.Text`
@@ -32,7 +34,7 @@ export const Border = styled.View`
     align-items: center;
     justify-content: center;
     align-self: center;
-    margin-top: 70%;
+    /* margin-top: 60%; */
 `;
 
 export const Button = styled.TouchableOpacity`

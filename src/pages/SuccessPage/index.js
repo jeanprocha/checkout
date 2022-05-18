@@ -11,7 +11,7 @@ import { Container, Title, SubTitle, Border, Button, TextButton } from './style'
 export default function SuccessPage() {
     const navigation = useNavigation()
     const dispatch = useDispatch()
-    
+
     const handlePress = () => {
         dispatch(appRemoveCart())
         navigation.navigate('Home')
@@ -20,12 +20,14 @@ export default function SuccessPage() {
     return (
         <Container>
             <StatusBar barStyle='light-content' />
-            <Border>
-                <SVG_SUCCESS />
-            </Border>
-            <Title>SUCESSO!</Title>
-            <SubTitle>Compra realizada com sucesso, aproveite!</SubTitle>
-            <Button onPress={ handlePress }>
+            <>
+                <Border>
+                    <SVG_SUCCESS />
+                </Border>
+                <Title>SUCESSO!</Title>
+                <SubTitle>Compra realizada com sucesso, aproveite!</SubTitle>
+            </>
+            <Button onPress={handlePress}>
                 <TextButton>PROSSEGUIR</TextButton>
             </Button>
         </Container>

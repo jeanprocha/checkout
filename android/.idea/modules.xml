@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/checkout.iml" filepath="$PROJECT_DIR$/.idea/modules/checkout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/checkout.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/checkout.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/214197827/checkout.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/214197827/checkout.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1640165601/checkout.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1640165601/checkout.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1526020551/checkout.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-1526020551/checkout.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-56818922/checkout.react-native-svg.iml" filepath="$PROJECT_DIR$/.idea/modules/-56818922/checkout.react-native-svg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1767307339/react-native-gradle-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/1767307339/react-native-gradle-plugin.iml" />
+    </modules>
+  </component>
+</project>

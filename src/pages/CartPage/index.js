@@ -24,12 +24,12 @@ export default CardPage = () => {
     }
 
     return (
-        <View style={{ backgroundColor: "#F8F8F8", flex: 1}}>
+        <View style={{ backgroundColor: "#F8F8F8", flex: 1, paddingTop: Platform.OS == 'android' && 10 }}>
             <HeaderCardPage />
             {!appReducer.cart.length ?
                 <ListNotItensCart />
                 :
-                <>
+                <View style={{ height: '80%' }}>
                     <ListCard />
                     <Line>
                         <Text>Total:  </Text>
@@ -39,7 +39,7 @@ export default CardPage = () => {
                     <Button onPress={() => navigation.navigate('Success')}>
                         <TextButton>FINALIZAR COMPRA</TextButton>
                     </Button>
-                </>
+                </View>
             }
         </View>
     )
