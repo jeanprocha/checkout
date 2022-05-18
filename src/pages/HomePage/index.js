@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { StatusBar, ActivityIndicator, Platform } from 'react-native'
+import { StatusBar, ActivityIndicator, Platform, useColorScheme } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -10,13 +10,15 @@ import HeaderHome from '../../components/HeaderHome'
 import FilterOptions from '../../components/FilterOptions'
 import Carousel from '../../components/Carousel'
 import Listing from '../../components/Listing'
-import { Loading, Container, Button, TextButton, ContainerButton } from './style'
+import { Loading, Container, Button, TextButton, ContainerButton, TextAlert } from './style'
 
 
-export default HomePage = ( props ) => {
+export default HomePage = (props) => {
     const appReducer = useSelector(states => states.appReducer)
     const dispatch = useDispatch()
     const navigation = useNavigation()
+    const deviceTheme = useColorScheme()
+    const [alert, setAlert] = useState(false)
 
     useEffect(() => {
         dispatch(appInitialApi())
@@ -30,13 +32,18 @@ export default HomePage = ( props ) => {
             .catch(() => {
                 return false
             })
-            if( data ){
-                dispatch(appCart({ item: false, list: data }))
-            }
+        if (data) {
+            dispatch(appCart({ item: false, list: data }))
+        }
     }
 
     useEffect(() => {
         getData()
+        setTimeout(() => {
+            if (appReducer.loading == false) {
+                setAlert(true)
+            }
+        }, 4000);
     }, [])
 
     const buttonCart = () => {
@@ -61,7 +68,8 @@ export default HomePage = ( props ) => {
             <StatusBar barStyle='default' />
             {!appReducer.loading ?
                 <Loading>
-                    <ActivityIndicator color={"#000"} size={'large'} />
+                    <ActivityIndicator color={deviceTheme == 'dark' ? '#fff' : "#000"} size={'large'} />
+                    {alert && <TextAlert >Carregando informações!</TextAlert> }
                 </Loading>
                 :
                 <Container

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { FlatList, ActivityIndicator } from 'react-native'
+import { FlatList, ActivityIndicator, useColorScheme } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import { appCart } from '../../store/actions/appActions'
 
@@ -10,6 +10,7 @@ import { Container, Title, ContainerIndicator } from './style'
 export default Listing = () => {
     const appReducer = useSelector(states => states.appReducer)
     const dispatch = useDispatch()
+    const deviceTheme = useColorScheme()
 
     const handlePress = ( item ) => {
         dispatch(appCart({ item: {index: appReducer.cart.length, ... item}, list: appReducer.cart }))
@@ -20,7 +21,7 @@ export default Listing = () => {
             <Title>Listagem</Title>
             {!appReducer.homeLoading ?
                 <ContainerIndicator>
-                    <ActivityIndicator size={'large'} color={"#000"} />
+                    <ActivityIndicator size={'large'} color={deviceTheme == 'dark' ? '#fff' : "#000"} />
                 </ContainerIndicator>
                 :
                 <FlatList

@@ -37,3 +37,10 @@ export const ContainerButton = styled.View`
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
 `;
+
+export const TextAlert = styled.Text`
+    text-align: center;
+    font-size: 14px;
+    color: ${props => props.theme.textColor};
+    margin-top: 6px;
+`

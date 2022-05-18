@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ActivityIndicator, FlatList, View } from 'react-native'
+import { ActivityIndicator, FlatList, useColorScheme } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import ItemCard from '../ItemCard'
@@ -9,6 +9,7 @@ import { Container, Title, ContainerIndicator } from './style'
 export default ListCard = () => {
     const appReducer = useSelector(state => state.appReducer)
     const list = appReducer.cart
+    const deviceTheme = useColorScheme()
     
     return (
         <Container>
@@ -16,7 +17,7 @@ export default ListCard = () => {
 
             {!appReducer.homeLoading ?
                 <ContainerIndicator>
-                    <ActivityIndicator size={'large'} color={"#000"} />
+                    <ActivityIndicator size={'large'} color={deviceTheme == 'dark' ? '#fff' : "#000"} />
                 </ContainerIndicator>
                 :
                 <FlatList
