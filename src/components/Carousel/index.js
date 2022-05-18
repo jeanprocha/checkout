@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, FlatList, ActivityIndicator } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import { appCart } from '../store/actions/appActions'
+import { appCart } from '../../store/actions/appActions'
 
-import ItemCarosel from './ItemCarosel'
+import ItemCarosel from '../ItemCarosel'
+import { Container, Title, ContainerIndicator } from './style'
 
 export default Carousel = () => {
     const appReducer = useSelector(states => states.appReducer)
@@ -15,12 +16,12 @@ export default Carousel = () => {
     }
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Novidades</Text>
+        <Container>
+            <Title>Novidades</Title>
             {!appReducer.homeLoading ?
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <ContainerIndicator>
                     <ActivityIndicator size={'large'} color={"#000"} />
-                </View>
+                </ContainerIndicator>
                 :
                 <FlatList horizontal
                     data={appReducer.products.slice(0, 5)}
@@ -32,30 +33,6 @@ export default Carousel = () => {
                     }
                 />
             }
-        </View>
+        </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        paddingHorizontal: 16,
-        paddingBottom: 25.5,
-        marginTop: 27,
-        borderBottomWidth: 1,
-        borderColor: "#EBEBED",
-        minHeight: 360
-    },
-    img: {
-        width: 172,
-        height: 183,
-        borderRadius: 10,
-        resizeMode: 'contain'
-    },
-    title: {
-        fontFamily: "Work Sans",
-        fontSize: 24,
-        fontWeight: '600',
-        color: "#000",
-        marginBottom: 20
-    }
-})

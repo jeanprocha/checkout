@@ -1,21 +1,23 @@
 import React from 'react'
 
-import { View, Text, StyleSheet, ActivityIndicator, FlatList } from 'react-native'
+import { ActivityIndicator, FlatList } from 'react-native'
 import { useSelector } from 'react-redux'
-import ItemCard from './ItemCard'
+
+import ItemCard from '../ItemCard'
+import { Container, Title, ContainerIndicator } from './style'
 
 export default ListCard = () => {
     const appReducer = useSelector(state => state.appReducer)
     const list = appReducer.cart
     
     return (
-        <View style={ styles.container }>
-            <Text style={ styles.title }>Meu Carrinho</Text>
+        <Container>
+            <Title>Meu Carrinho</Title>
 
             {!appReducer.homeLoading ?
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 100 }}>
+                <ContainerIndicator>
                     <ActivityIndicator size={'large'} color={"#000"} />
-                </View>
+                </ContainerIndicator>
                 :
                 <FlatList
                     data={appReducer.cart}
@@ -25,24 +27,6 @@ export default ListCard = () => {
                     showsVerticalScrollIndicator={false}
                 />
             }
-        </View>
+        </Container>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        // flex: 1,
-        marginHorizontal: 20,
-        marginTop: 31
-
-    },
-    title: {
-        fontFamily: "Work Sans",
-        fontSize: 24,
-        fontWeight: '600',
-        lineHeight: 28,
-        color: '#000',
-        marginBottom: 45
-    }
-
-})

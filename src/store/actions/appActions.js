@@ -34,7 +34,7 @@ export const storeData = async (value) => {
       const jsonValue = JSON.stringify(value)
       await AsyncStorage.setItem('@checkout', jsonValue)
     } catch (e) {
-      // saving error
+        console.log('error',e);
     }
   }
 
@@ -51,11 +51,18 @@ export const appCart = ({ item, list }) => {
 
 export const appAddCart = ({ item, list, index }) => {
     var newObject = JSON.parse(JSON.stringify(item));
+    var most = 0
 
-    newObject.index = index
+    list.map((item) => {
+        if( item.index > most ){
+            most = item.index
+        }
+    })
+
+    newObject.index = most >= index ? most+1 : index
     list.push(newObject)
     storeData(list)
-    
+
     return {
         type: 'APP_CART',
         payload: list
