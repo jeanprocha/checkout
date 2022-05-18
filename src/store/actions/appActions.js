@@ -1,5 +1,6 @@
 import { API } from '../../api'
 import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const appLoading = (payload) => {
     return {
@@ -28,8 +29,20 @@ export const appProducts = (payload) => {
     }
 }
 
+export const storeData = async (value) => {
+    try {
+      const jsonValue = JSON.stringify(value)
+      await AsyncStorage.setItem('@checkout', jsonValue)
+    } catch (e) {
+      // saving error
+    }
+  }
+
 export const appCart = ({ item, list }) => {
-    list.push(item)
+    if( item ){
+        list.push(item)
+    }
+    storeData(list)
     return {
         type: 'APP_CART',
         payload: list
@@ -41,6 +54,7 @@ export const appAddCart = ({ item, list, index }) => {
 
     newObject.index = index
     list.push(newObject)
+    storeData(list)
     
     return {
         type: 'APP_CART',
@@ -49,6 +63,8 @@ export const appAddCart = ({ item, list, index }) => {
 }
 
 export const appRemoveCart = () => {
+    storeData([])
+
     return {
         type: 'APP_CART',
         payload: []
@@ -57,6 +73,8 @@ export const appRemoveCart = () => {
 
 export const appRemoveItemCart = ({ item , list }) => {
     list = list.filter(itemFilter => itemFilter.index !== item.index )
+    storeData(list)
+
     return {
         type: 'APP_CART',
         payload: list

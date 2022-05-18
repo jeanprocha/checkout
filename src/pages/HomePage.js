@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, StatusBar, ActivityIndicator, View, FlatList, Text, TouchableOpacity } from 'react-native'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import HeaderHome from '../components/HeaderHome'
-import { appInitialApi } from '../store/actions/appActions'
+import { appInitialApi, appCart } from '../store/actions/appActions'
 import FilterOptions from '../components/FilterOptions'
 import Carousel from '../components/Carousel'
 import Listing from '../components/Listing'
@@ -17,7 +17,23 @@ export default HomePage = () => {
 
     useEffect(() => {
         dispatch(appInitialApi())
+    }, [])
 
+    const getData = async () => {
+        const data = await AsyncStorage.getItem('@checkout')
+            .then((json) => {
+                return json != null ? JSON.parse(json) : false;
+            })
+            .catch(() => {
+                return false
+            })
+            if( data ){
+                dispatch(appCart({ item: false, list: data }))
+            }
+    }
+
+    useEffect(() => {
+        getData()
     }, [])
 
     const buttonCart = () => {
